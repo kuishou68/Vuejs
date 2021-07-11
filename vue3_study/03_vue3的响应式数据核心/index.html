@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01_响应式原理</title>
+</head>
+<body>
+    <script>
+        // 目标对象
+        const user = {
+            name: '魁首',
+            age: 21,
+            wife:{
+                name: 'kuishou',
+                age: 19
+            }
+        }
+        // 把目标对象变成代理对象
+        const proxyUser = new Proxy(user,{
+            // 获取目标对象的某个值
+            get(target, prop){
+                console.log('get调用了')
+                return Reflect.get(target, prop)
+            },
+            // 修改目标对象的属性值/为目标对象添加新的属性
+            set(target, prop, val){
+                console.log('set调用了')
+                return Reflect.get(target, prop, val)
+            },
+            // 删除目标对象上的某个值
+            deleteProperty(){
+                console.log('deleteProperty调用了')
+                return Reflect.deleteProperty(target, prop)
+            }
+        })
+        // 代理对象--获取--目标对象中的某个属性值
+        console.log(proxy.name)
+        // 代理对象--更新--目标对象中的某个属性值
+        proxyUser.name = '领秀'
+        console.log(user)
+        // 代理对象-- 向 --目标对象添加新的属性
+        proxyUser.gender = '男'
+        console.log(user)
+        // 代理对象--删除--目标对象中的某个属性值
+        delete proxyUser.name
+        console.log(user)
+        // 更新 目标对象 中的某个 属性对象 的属性值
+        proxyUser.wife.name = 'lingxiu'
+        console.log(user)
+    </script>
+</body>
+</html>

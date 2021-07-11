@@ -1,0 +1,46 @@
+@import "./normalize.css";
+
+/* 定义样式变量 */
+:root {
+    --color-text: #666; /* 文本颜色 */
+    --color-high-text: #42bBaa; /* 文本高亮 */
+    --color-tint: #42b983; /* 激活时的颜色 */
+    --color-background: #FFFFFF; /* 背景颜色 */
+    --font-size: 14px; /* 字体大小 */
+    --line-height: 1.5; /* 行高 */
+}
+
+/* 所有元素初始样式 */
+*,
+*::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    user-select: none; /* 禁止用户选中文本或图片复制 */
+    background: var(--color-background); /* 使用上面定义变量 */
+    color: var(--color-text);
+    width: 100vw; /* vw 占整个设备的宽度 */
+}
+
+a {
+    color: var(--color-text);
+    text-decoration: none; /* a标签没有划线 */
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+/*由于商品详情页面图片样式不起效，这里写到全局来*/
+img {
+    max-width: 100% !important;
+    height: auto !important;
+}
+

@@ -1,0 +1,51 @@
+{
+  "id": "2370588",
+  "name": "EWShop",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "12154178",
+      "name": "收 藏",
+      "font_class": "shoucang1",
+      "unicode": "e620",
+      "unicode_decimal": 58912
+    },
+    {
+      "icon_id": "7478153",
+      "name": "lift",
+      "font_class": "lift",
+      "unicode": "e7b9",
+      "unicode_decimal": 59321
+    },
+    {
+      "icon_id": "13063146",
+      "name": "购物车",
+      "font_class": "gouwuche",
+      "unicode": "e600",
+      "unicode_decimal": 58880
+    },
+    {
+      "icon_id": "1271042",
+      "name": "分类",
+      "font_class": "fenlei",
+      "unicode": "e623",
+      "unicode_decimal": 58915
+    },
+    {
+      "icon_id": "8807291",
+      "name": "首页-选中",
+      "font_class": "yemian-copy-copy",
+      "unicode": "e602",
+      "unicode_decimal": 58882
+    },
+    {
+      "icon_id": "15293911",
+      "name": "个人中心 - 中",
+      "font_class": "gerenzhongxin1",
+      "unicode": "e603",
+      "unicode_decimal": 58883
+    }
+  ]
+}

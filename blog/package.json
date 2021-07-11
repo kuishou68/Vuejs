@@ -1,0 +1,31 @@
+{
+  "name": "ywymoshi.github.io",
+  "version": "1.0.0",
+  "description": "a",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs",
+    "deploy": "deploy.bat"  
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kuishou68/kuishou68.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kuishou68/kuishou68.github.io/issues"
+  },
+  "homepage": "https://github.com/kuishou68/kuishou68.github.io#readme",
+  "devDependencies": {
+    "@vuepress/plugin-active-header-links": "^1.5.4",
+    "@vuepress/plugin-back-to-top": "^1.5.4",
+    "@vuepress/plugin-google-analytics": "^1.5.4",
+    "vuepress": "^1.5.4"
+  },
+  "dependencies": {
+    "copy-webpack-plugin": "^6.2.1"
+  }
+}
