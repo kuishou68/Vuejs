@@ -1,54 +1,73 @@
-# 🔥uni-app 写了一个网易云微信小程序
+### 1、**项目介绍**：
 
-uni-app、vue、小程序集于一身的实战，很好的一个练手项目。包括：云音乐首页分类、音乐列表页展示、音乐详情页、音乐播放器、推荐音乐、用户留言、音乐搜索、加载骨架屏等实现。
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-q8PTY7F5-1624349745574)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210620003255158.png)\]](https://img-blog.csdnimg.cn/20210622161622270.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
+- uni-app、vue、小程序集于一身的实战，很好的一个练手项目。包括：云音乐首页分类、音乐列表页展示、音乐详情页、音乐播放器、推荐音乐、用户留言、音乐搜索、加载骨架屏等实现。
 
-⚡后端接口地址  https://github.com/Binaryify/NeteaseCloudMusicApi
+![img](https://pic2.zhimg.com/v2-d249c81489d26cc8c2ddb44a84605445_b.jpg)
 
-🎉项目下载地址 [ https://github.com/kuishou68/neteaseMusic](https://github.com/kuishou68/neteaseMusic)
+📣 优化内容    ①修复list.vue接口问题； ②优化detail部分样式，增加网易云logo； ③代码各个地方都有详细注释；④增加index.vue登录功能；⑤增加dateil.vue底部播放栏；
 
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-GJcbKrn3-1624349745576)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622151456623.png)\]](https://img-blog.csdnimg.cn/20210622161716426.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-zkr4GeUd-1624349745577)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622152623425.png)\]](https://img-blog.csdnimg.cn/20210622161828123.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-mYlxiB2q-1624349745579)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622154449521.png)\]](https://img-blog.csdnimg.cn/20210622161845941.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
+🎉下载地址  [ https://blog.csdn.net/weixin_44019370/article/details/118109692](https://link.juejin.cn/?target=https%3A%2F%2Fblog.csdn.net%2Fweixin_44019370%2Farticle%2Fdetails%2F118109692)    拿走不谢；
 
-说
+💡 防止丢失，github点个Follow🙏关注我、点个Star支持我🙏就行！！
+
+![img](https://pic2.zhimg.com/v2-84e9e37cfd18e46dfbaf7f620f7ef755_b.jpg)
+
+![img](https://pic2.zhimg.com/v2-0b29ef853fb99ef9f001e017ed686811_b.png)
+
+⚡后端接口地址  [github.com/Binaryify/N…](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2FBinaryify%2FNeteaseCloudMusicApi)
+
+🎉项目下载地址 [ https://github.com/kuishou68/neteaseMusic](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fkuishou68%2FneteaseMusic)
+
+### 2、**项目搭建流程**：
+
+![image.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/47584bfb618b4a24b5c1bc671fc4d346~tplv-k3u1fbpfcp-watermark.image)
+
+
+![image.png](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/5d3237dc1d0747b09429e93360a25092~tplv-k3u1fbpfcp-watermark.image)
+
+
+![image.png](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/06e4033a8ba64165b49cb1b1c3a81485~tplv-k3u1fbpfcp-watermark.image)
+
 
 
 📣可以拿真实的网易云微信小程序做个对比
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-cikk5UOW-1624349745580)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622134407010.png)\]](https://img-blog.csdnimg.cn/2021062216192544.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
 
+![img](https://pic1.zhimg.com/v2-cb86f210eae6ad2346fed503b751dd14_b.jpg)
 
+- 👀开源不易，🙏球球路过的大哥点个Follow、点个Star再走🙏！[ https://github.com/kuishou68](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fkuishou68)
 
+![img](https://pic2.zhimg.com/v2-5ca580cef0c9e622450052c8276e6dd1_b.jpg)
 
-- 👀开源不易，🙏球球路过的大哥点个Follow、点个Star再走吧🙏！[ https://github.com/kuishou68](https://github.com/kuishou68)
-![在这里插入图片描述](https://img-blog.csdnimg.cn/20210622161957292.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
+- 🚀项目下载地址  [github.com/kuishou68/n…](https://link.juejin.cn/?target=https%3A%2F%2Fgithub.com%2Fkuishou68%2FneteaseMusic)
 
-- 🚀项目下载地址  [https://github.com/kuishou68/neteaseMusic](https://github.com/kuishou68/neteaseMusic)
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-Lkhuvxwc-1624349745582)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622160119798.png)\]](https://img-blog.csdnimg.cn/2021062216210397.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
+![img](https://pic2.zhimg.com/v2-c2b5d77f501f1b2451f4557e6af48ced_b.jpg)
 
+### **3、必要配置**：
 
-1.🛰️代码中很多地方都加入了注释，看不懂代码的可以看注释。
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-SfKrchnz-1624349745583)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622130801401.png)\]](https://img-blog.csdnimg.cn/20210622162232877.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
+​    3.1.🛰️代码中很多地方都加入了注释，看不懂代码的可以看注释。
 
+![img](https://pic2.zhimg.com/v2-92e7103c3175eb5b5e6532267f12299d_b.jpg)
 
-2.💡其中用到了骨架屏，下载地址  https://ext.dcloud.net.cn/plugin?id=1439![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-ZfdyNAIW-1624349745583)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622131410072.png)\]](https://img-blog.csdnimg.cn/20210622162249647.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
+​    3.2.💡其中用到了骨架屏，下载地址  [ext.dcloud.net.cn/plugin?id=1…](https://link.juejin.cn/?target=https%3A%2F%2Fext.dcloud.net.cn%2Fplugin%3Fid%3D1439)
 
+![img](https://pic2.zhimg.com/v2-1c51d46a501b913f4ce1ba0468d09fcd_b.jpg)
 
-3.🌈两种安装方式，自行选择。
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-fXVymhnd-1624349745584)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622131910935.png)\]](https://img-blog.csdnimg.cn/20210622162312704.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
+​    3.3.🌈两种安装方式，自行选择。
 
+![img](https://pic2.zhimg.com/v2-0de1376d997c31035559ead2d4e0d429_b.jpg)
 
-4.🎨选择要导入的项目。
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-q1Jvm9mO-1624349745585)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622132127131.png)\]](https://img-blog.csdnimg.cn/20210622162335655.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
+​    3.4.🎨选择要导入的项目。
 
-5.💎安装好后  components下会多出个文件
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-38UOTnpi-1624349745586)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622132238210.png)\]](https://img-blog.csdnimg.cn/20210622162403334.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
+![img](https://pic3.zhimg.com/v2-891277712e6d6f3de76a74a89015908a_b.jpg)
 
-------------------------
+​    3.5.💎安装好后  components下会多出个文件
 
-1.💡还会用到scss/sass编译
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-kP84DIKl-1624349745586)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622132653008.png)\]](https://img-blog.csdnimg.cn/20210622162422511.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
+![img](https://pic1.zhimg.com/v2-2dce0459031991d96f82201c8ea257cc_b.jpg)
 
+​    3.6.💡还会用到scss/sass编译
 
-2.一样的步骤，打开HBuider安装就行。
-![\[外链图片转存失败,源站可能有防盗链机制,建议将图片保存下来直接上传(img-3rgrFbG0-1624349745587)(C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210622132804809.png)\]](https://img-blog.csdnimg.cn/20210622162433987.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80NDAxOTM3MA==,size_16,color_FFFFFF,t_70)
+![img](https://pic1.zhimg.com/v2-7d34bbd77c5249978fc7fee76694665c_b.jpg)
+
+​    3.7.一样的步骤，打开HBuider安装就行。
+
+![img](https://pic3.zhimg.com/v2-69e3566d083565fd85e20f188a8522ea_b.jpg)
