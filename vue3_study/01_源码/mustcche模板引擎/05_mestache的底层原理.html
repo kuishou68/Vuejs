@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>metache的底层原理</title>
+</head>
+<body>
+    <script>
+        // 模板
+        var templateStr =  '<h1>我买了一辆{{thing}},{{money}}W,很{{mood}}</h1>';
+        // 数据
+        var data = {
+            thing: '兰博基尼',
+            money: 50,
+            mood: '开心'
+        };
+        // 1.使用正则实现简单数据填充，正则中的 g 表示全局，把'你'替换成 '我'
+        // console.log('你很帅，你很有钱'.replace(/你/g,'我'));
+        // 2.最简单的模板引擎实现机理，利用正则表达式中的replace()方法
+        //   replace()的第二个参数$1 可以是一个函数，这个喊啊书提供的东西的参数就是$1
+       function render(templateStr, data){
+           return templateStr.replace(/\{\{(\w+)\}\}/g,function(findStr, $1){
+               return data[$1];
+           });
+       }
+       var result = render(templateStr, data);
+       console.log(result);
+    </script>
+
+</body>
+</html> 

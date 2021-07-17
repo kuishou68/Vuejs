@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>join法</title>
+</head>
+<body>
+    <ul id="list"></ul>
+
+    <script>
+        var arr = [
+            {"name":"张三", "age":12, "sex":"男"},
+            {"name":"李四", "age":13, "sex":"女"},
+            {"name":"王五", "age":14, "sex":"女"},
+            {"name":"赵六", "age":15, "sex":"男"},
+        ]
+        var list = document.getElementById('list');
+        // 遍历arr数组，每遍历一项，就将HTML 字符串添加到list 中
+        for(let i = 0; i<arr.length; i++){
+            list.innerHTML += [
+                '<li>',
+                '    <div class="hd">'+ arr[i].name +'</div>',
+                '    <div class="bd">',
+                '        <p>姓名：'+ arr[i].name +'</p>',
+                '        <p>年龄：'+ arr[i].age +'</p>',
+                '        <p>性别：'+ arr[i].sex +'</p>',
+                '    </div>',
+                '</li>'
+            ].join('')
+        }
+
+        
+        
+    </script>
+</body>
+</html>

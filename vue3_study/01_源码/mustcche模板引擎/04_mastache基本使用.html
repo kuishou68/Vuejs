@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mustache基本使用</title>
+</head>
+<body>
+    <script src="lib/mustache.js"></script>
+    <script>
+        // 模板
+        var templateStr = `
+            <ul>
+                {{#arr}}
+                <li>
+                    <div class="hd"> {{name}} </div>
+                    <div class="bd">
+                        <p>姓名：{{name}</p>
+                        <p>年龄：{{age}</p>
+                        <p>性别：{{sex}</p>
+                    </div
+                </li>
+                {{/arr}}
+            </ul>
+        `;
+        // 数据
+        var data = {
+            arr : [
+                {"name":"张三", "age":12, "sex":"男"},
+                {"name":"李四", "age":13, "sex":"女"},
+                {"name":"王五", "age":14, "sex":"女"},
+                {"name":"赵六", "age":15, "sex":"男"},
+            ]
+        };
+
+        // 合并模板数据
+        var domStr =  Mustache.render(templateStr, data);
+        console.log(domStr);
+    </script>
+</body>
+</html>
