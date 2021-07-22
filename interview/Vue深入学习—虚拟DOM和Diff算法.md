@@ -14,26 +14,29 @@ h函数用于产生虚拟节点，同时也可以嵌套使用，得到虚拟DOM�
 
 > **3、什么是虚拟DOM?**
 
-用js对象描述DOM 的层次结构，DOM中的一切属性都在虚拟DOM中有对应到的属性。
+一个js对象描述DOM 的层次结构，用对象属性来描述节点，实际上它对真实DOM的抽象结果，本质上就是JS和真实DOM之间的一个缓存，原生DOM运行慢，将DOM放在JS层，提高渲染性能。
 
 ​	3.1、创建一个虚拟DOM
 
 ```javascript
-// 创建patch函数
-const patch = init([classModule, propsModule, styleModule, eventListenersModule]);
-
-// 创建虚拟节点
-const myVirtual1 = h('a', {
-	props: {
-		href:'https://blog.lijianlin.com.cn/',
-		target: '_blank'
-	}
-},'魁首');
-console.log(myVirtual);
-
-//让虚拟节点上树
-const container = document.getElementById('container');
-patch(container, myVirtual1);
+// 真实DOM
+<ul id='list'>
+      <li class='item'>Item 1</li>
+      <li class='item'>Item 2</li>
+      <li class='item'>Item 3</li>
+</ul>
+// 虚拟DOM
+ var element = {
+        tagName: 'ul', // 节点标签名
+        props: { // DOM的属性，用一个对象存储键值对
+            id: 'list'
+        },
+        children: [ // 该节点的子节点
+          {tagName: 'li', props: {class: 'item'}, children: ["Item 1"]},
+          {tagName: 'li', props: {class: 'item'}, children: ["Item 2"]},
+          {tagName: 'li', props: {class: 'item'}, children: ["Item 3"]},
+        ]
+  }
 ```
 
 ​	3.2、patch函数源码流程图
@@ -103,6 +106,9 @@ export default function(oldVnode, newVnode){
 
 > **4、diff 算法原理**
 
+- 只对比**父节点**相同的新旧子节点（Vnode）,时间复杂度O(n)
+- 在比较过程中，循环从两边向中间合拢。
+
 ​	4.1、diff是发生在虚拟DOM上的，用来计算两个虚拟DOM的差异，并重新熏染。
 
 ```javascript
@@ -131,7 +137,21 @@ const myVirtual3 = h('ul',{},[
 
 ```
 
-​	**4.2、Diff值得注意的地方**：
+
+
+> **4.3、diff算法新旧节点对比的过程？**	
+
+![image-20210721230652538](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210721230652538.png)
+
+> ①先借助key值找到``不需要移动``的相同节点。
+>
+> ②再找到相同的节点，进行``移动``。
+>
+> ③找不到的，才会``新建删除``节点，保底处理。
+
+
+
+> **4.3、Diff值得注意的地方**：
 
 - Diff算法更改前后是同一个DOM节点
 - 选择器、key相同则判断为同一个节点。
@@ -143,7 +163,9 @@ const myVirtual3 = h('ul',{},[
 
 
 
+参考：https://segmentfault.com/a/1190000020663531
 
+https://juejin.cn/post/6921911974611664903
 
 
 

@@ -12,7 +12,7 @@
 npm install
 ```
 
-### 编译远行
+### 编译运行
 如果已经安装好node环境，下载后直接远行
 ```
 npm run serve
