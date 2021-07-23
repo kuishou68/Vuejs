@@ -1,8 +1,8 @@
 [mustache](https://github.com/janl/mustache.js/) 是 “胡子”的意思，因为它的嵌入标记 {{ }} 旋转过来很像[胡子](https://mustache.github.io/)，Vue中的 {{ }} 语法也引用了mustache，这也是我深入学习的目的。
 
+![giphy](C:\Users\Administrator\Desktop\giphy.gif)
 
-
-> 原始js方式使 **数据** 变为**视图**
+> 1、原始js方式使 **数据** 变为**视图**
 
 ```
  <ul id="list"></ul>
@@ -43,7 +43,7 @@
 </script>
 ```
 
-> mustache的**底层原理**
+> 2、mustache的**底层原理**
 
 要实现这样的：![image-20210718104621132](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210718104621132.png)
 
@@ -77,7 +77,7 @@
 
 ![image-20210717165612249](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210717165612249.png)
 
-> **什么是tokens?**
+> 2、**什么是tokens?**
 
 JS的嵌套数组，模板字符串的JS表示形式。
 
