@@ -32,6 +32,68 @@ computed: {
 
 
 
+> **3、什么是单项数据流？**
+>
+> 数据触发视图的更改，视图跟用户进行交互，触发动作后修改data数据，整个环形的数据流动就叫做单项数据流。相当于（父组件传入到子组件的过程）
+
+```javascript
+new Vue({
+  // state 驱动应用的数据源；
+  data () {
+    return {
+      count: 0
+    }
+  },
+  // view 以声明方式将 state 映射到视图；
+  template: `
+    <div>{{ count }}</div>
+  `,
+  // actions 响应在 view 上的用户输入导致的状态变化。
+  methods: {
+    increment () {
+      this.count++
+    }
+  }
+})
+```
+
+![img](https://vuex.vuejs.org/flow.png)
+
+> **4、什么是Mutation?**
+>
+> ①更改 Vuex 的 store 中的状态的唯一方法;
+>
+> ②只能通过mutation变更 Store数据，不可直接操作 Store 中的数据；
+
+```javascript
+// 定义 Mutation
+const store = new Vuex.Store({
+	state: {
+		count：0
+	},
+	mutations: {
+		addN(state, step){
+			// 变更状态
+			state.count += step
+		}
+	}
+})
+```
+
+```javascript
+// 触发 mutation
+methods: {
+	handle(){ 
+		// 触发 mutations 的第一种方式
+		// this.$store.commit('add')	
+        // 调用 commit 函数，触发 mutations 时携带参数
+        this.$store.commit('addN', 3)
+	}
+}
+```
+
+
+
 > **总结：**store 就是一个数据仓库，为了更方便的管理仓库，把一个大的store拆成小的  modules ；
 >
 > 整个 moudles 是一个树形结构，每个module又分别定义了 state，getters，mutations，actions；

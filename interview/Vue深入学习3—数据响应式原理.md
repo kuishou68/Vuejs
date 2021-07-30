@@ -17,7 +17,7 @@ this.setState({
 
 > **1.2、数据响应式的中心思想？**
 
-通过重写数据的get和set属性方法，让数据在被渲染时，把所有用到自己的订阅者，存放在自己的订阅者列表中；当数据发生改变时，该方法通知所有订阅了自己的订阅者，达到重新渲染的目的。
+通过重写数据的get和set属性方法，让数据在被渲染时，把所有用到该数据的订阅者，存放订阅者列表中；当数据发生改变时，Notify方法通知所有订阅了该数据的订阅者Watcher，达到重新渲染DOM的目的。
 
 ![image-20210721195342776](D:\Code\Vuejs\vue-cli\interview\assets\image-20210721195342776.png)
 
@@ -235,7 +235,7 @@ export default class Dep{
 
 ![image-20210721211629294](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210721211629294.png)
 
-```
+```javascript
 <script>
 	// 深层套娃
 	var o = {

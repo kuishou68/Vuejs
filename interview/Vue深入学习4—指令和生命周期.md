@@ -2,7 +2,7 @@
 >
 > 首先将HTML结构解析成属性列表，存入到数组中，接着遍历数组中的每一个节点，获取到不同指令对应的方法。
 
-```
+```javascript
 // 将HTML看作真正的属性列表
 var ndoeAttrs = node.attributes;
 var self = this;
@@ -148,7 +148,7 @@ export function mountComponent (
   }
   // 把它设为vm._watcher 在watcher的构造函数中.
   // 因为观察者的初始补丁可能会调用$forceUpdate(例如:inside child . exe)
-  // 组件的挂载钩子)，依赖于vm。_watcher已经定义.
+  // 组件的挂载钩子)，依赖于vm._watcher已经定义.
   new Watcher(vm, updateComponent, noop, {
     before () {
       if (vm._isMounted) {
