@@ -17,8 +17,8 @@
 	<h1>Hello  kuishou!</h1>
 	<p>
         <!--<router-link>默认会被渲染成一个`<a>`标签-->
-        <router-link to="/foo">滚去学习 Foo</router-link>
-        <router-link to="/bar">赶紧敲代码 bar</router-link>
+        <router-link to="/foo"> 睡觉 Foo</router-link>
+        <router-link to="/bar"> 敲代码 bar</router-link>
     </p>
     <!--路由匹配到的组件将渲染在这里-->
     <router-view></router-view>
