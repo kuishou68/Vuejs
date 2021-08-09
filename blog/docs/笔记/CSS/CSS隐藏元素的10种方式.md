@@ -91,7 +91,7 @@
 
 ### 5、``visibility``
 
-​	visibility属性可以设置visible（显示）或hidden（隐藏）。
+​	visibility属性可以设置visible（显示）或hidden（隐藏）。占用原来的位置，只是不可用，不会相应事件
 
 ```
 <style>
@@ -109,7 +109,7 @@
 
 ### 6、``display``
 
-​		display属性比较常用，none可以有效的删除元素，就好像从未存在DOM中一样。	
+​		display属性比较常用，none可以有效的删除元素，就好像从未存在DOM中一样。不会占用原来的位置，回流
 
 ```
 <style>
