@@ -1,6 +1,8 @@
 # 《JavaScript正则表达式迷你书》
 
-![封面](https://github.com/kuishou68/assets/blob/main/image-20210802235508804.png)
+
+
+![image-20210802235508804](img/image-20210802235508804.png)
 
 ## 第1章 正则表达式  字符匹配
 
@@ -76,7 +78,7 @@ console.log(regex.text("02:08")); // true
 
 ```javascript
 var regex = /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
-console.log( regex.text("2021-08-05"));//true
+console.log( regex.test("2021-08-05"));//true
 ```
 
 🌰例子4️⃣：匹配以下👇**文件路径**📂
@@ -127,7 +129,7 @@ console.log(string.match(regex)[0]); // id="container"
 
 > 位置又被称为（锚），是相连字符之间的位置。如下所示👇
 
-![position](https://github.com/kuishou68/assets/blob/main/image-20210805225110504.png)
+![position](img/image-20210805225110504.png)
 
 
 
@@ -181,28 +183,28 @@ console.log(format(1888));// "&1,888,00"
 var regex = /^[0-9A-Za-z]{6,12}$/;
 ```
 
-![image-20210806153955569](https://github.com/kuishou68/assets/blob/main/image-20210806153955569.png)
+![image-20210806153955569](img/image-20210806153955569.png)
 
 ```javascript
 // 包含某一种字符
 var regex = /(?=.*[0-9])^[0-9A-Za-z]{6,12}$/;
 ```
 
-![image-20210806155004047](https://github.com/kuishou68/assets/blob/main/image-20210806155004047.png)
+![image-20210806155004047](img/image-20210806155004047.png)
 
 ```javascript
 // 同时包含数字和小写字母，可以用 (?=.*[0-9])(?=.*[a-z]) 
 var regex = /(?=.*[0-9])(?=.*[a-z])^[0-9A-Za-z]{6,12}$/;
 ```
 
-![image-20210806155447144](https://github.com/kuishou68/assets/blob/main/image-20210806155447144.png)
+![image-20210806155447144](img/image-20210806155447144.png)
 
 ```javascript
 // 合并以上集中情况
 var regex = /((?=.*[0-9])(?=.*[a-z])|(?=.*[0-9])(?=.*[A-Z])|(?=.*[a-z])(?=.*[A-Z]))^[0-9A-Za-z]{6,12}$/;
 ```
 
-![image-20210806160255546](https://github.com/kuishou68/assets/blob/main/image-20210806160255546.png)
+![image-20210806160255546](img/image-20210806160255546.png)
 
 
 
@@ -229,7 +231,7 @@ console.log(string.match(regex));
 //["2021-08-06", "2021", "08", "06", index: 0, input: "2021-08-06"]
 ```
 
-![image-20210806161634881](https://github.com/kuishou68/assets/blob/main/image-20210806161634881.png)
+![image-20210806161634881](img/image-20210806161634881.png)
 
 
 
@@ -258,7 +260,7 @@ function trim(str){
 console.log(trim("  kuishou  ")); // "kuishou"
 ```
 
-![image-20210806171343982](https://github.com/kuishou68/assets/blob/main/image-20210806171343982.png)
+![image-20210806171343982](img/image-20210806171343982.png)
 
 - **惰性匹配**
 
@@ -269,7 +271,7 @@ function trim(str){
 console.log(trim("  kuishou  "));// "kuishou"
 ```
 
-![image-20210806171458894](https://github.com/kuishou68/assets/blob/main/image-20210806171458894.png)
+![image-20210806171458894](img/image-20210806171458894.png)
 
 🌰例子：匹配 HTML成对标签
 
@@ -290,7 +292,7 @@ console.log(regex.test(string1));//true
 console.log(regex.test(string2));//true
 ```
 
-![image-20210806174258997](https://github.com/kuishou68/assets/blob/main/image-20210806174258997.png)
+![image-20210806174258997](img/image-20210806174258997.png)
 
 
 
@@ -308,7 +310,7 @@ console.log(regex.test(string2));//true
 
 - 匹配身份证
 
-![image-20210806223159285](https://github.com/kuishou68/assets/blob/main/image-20210806223159285.png)
+![image-20210806223159285](img/image-20210806223159285.png)
 
 - 匹配IP地址
 
@@ -331,7 +333,7 @@ console.log(regex.test(string2));//true
 - ``1\d{2}``，匹配 "100" 到 "199"; 2[0-4]\d，匹配 "200" 到 "249"；
 - ``25[0-5]``，匹配 "250" 到 "255"。
 
-![image-20210806225356990](https://github.com/kuishou68/assets/blob/main/image-20210806225356990.png)
+![image-20210806225356990](img/image-20210806225356990.png)
 
 
 
