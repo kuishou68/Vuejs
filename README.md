@@ -2,6 +2,7 @@
 
 ```
 Vuejs
+├── algorithm           labuladong算法解读，JavaScript实现
 ├── blog                修改过的静态网站生成器，生成个人博客专用
 ├── docs                所有文章都在这
 │   └──   ..vuepress

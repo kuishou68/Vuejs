@@ -177,7 +177,7 @@ const和let 有块级作用域、存在暂时性死区；
 
 ### 17.箭头函数(=>)和普通函数(function)有什么区别
 
-①箭头函数更简介，没有自己的this，继承来的this指向永远不会改变，call、bind、apply也不能改变this指向；
+①箭头函数更简洁，没有自己的this，继承来的this指向永远不会改变，call、bind、apply也不能改变this指向；
 
 ②箭头函数不能做构造函数、generator函数使用；
 
