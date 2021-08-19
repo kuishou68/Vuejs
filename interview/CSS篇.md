@@ -3,7 +3,7 @@
 ### 1.CSS可继承属性有哪些？
 
 - 文字相关：font-famliy  、font-weight 、font-size 、font-style
-- 文本相关：text-index（首行缩进） 、text-align（水平对齐） 、line-height 、text-transfrom（文本大小写） 、word-sacping 、letter-spacing 、color 
+- 文本相关：text-indent（首行缩进） 、text-align（水平对齐） 、line-height 、text-transfrom（文本大小写） 、word-sacping (字符间距)、letter-spacing 、color 
 - 元素可见性：visibility
 - 列表布局：list-style
 - 光标：cursor
@@ -122,15 +122,186 @@ BFC是为了解决以下几个问题：
 
 > 如果要实现两栏布局，左边设置``float:left``，右边``overflow:hidden``，这样右边就不会触发BFC，BFC区域不会与浮动元素发生重叠。
 
+
+
 ### 11.什么是margin重叠
 
-两个块级元素的上外边距和下外边距可能会合并为一个外边框，大小取决于外边距最大的那个，这就照成了margin重叠。
+两个**块级元素**的下外边距和上外边距可能会合并为一个外边框，大小取决于外边距最大的那个，这就照成了margin重叠。
 
 
 
 ### 12.元素的层叠顺序
 
-背景/边框  —>  z-index:值  —>  块级盒  —>  浮动盒  —>  行内盒  —>  z-index:0  —>  z-index:正值
+背景/边框  —>  z-index:负值  —>  块级盒  —>  浮动盒  —>  行内盒  —>  z-index:0  —>  z-index:正值
 
 ![image-20210813225106382](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210813225106382.png)
 
+
+
+### 13.水平垂直居中的实现
+
+- 利用**绝对定位**，先将元素的左上角通过top:50%和left:50%定位到页面的中心，然后再通过translate来调整元素的中心点到页面的中心。该方法需要**考虑浏览器兼容问题。**
+
+```css
+.parent {
+    position: relative;
+}
+ 
+.child {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+```
+
+- 利用绝对定位，设置四个方向的值都为0，并将margin设置为auto，由于宽高固定，因此对应方向实现平分，可以实现水平和垂直方向上的居中。该方法适用于**盒子有宽高**的情况：
+
+```css
+.parent {
+    position: relative;
+}
+.child {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+```
+
+- 利用绝对定位，先将元素的左上角通过top:50%和left:50%定位到页面的中心，然后再通过margin负值来调整元素的中心点到页面的中心。该方法适用于**盒子宽高已知**的情况
+
+```css
+.parent {
+    position: relative;
+}
+ 
+.child {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -50px;     /* 自身 height 的一半 */
+    margin-left: -50px;    /* 自身 width 的一半 */
+}
+```
+
+- 使用**flex布局**，通过align-items:center和justify-content:center设置容器的垂直和水平方向上为居中对齐，然后它的子元素也可以实现垂直和水平的居中。该方法要**考虑兼容的问题**，该方法在移动端用的较多：
+
+```css
+.parent {
+    display: flex;
+    justify-content:center;
+    align-items:center;
+}
+```
+
+![](https://image-static.segmentfault.com/206/595/206595301-5d560107ddb4c_fix732)
+
+- calc**动态计算** : 与上方距离[50%上层外框高度 - 50%当前div高度]
+
+```css
+.div0{
+    width:200px;
+    height:150px;
+    border:1px solid #000;
+}
+.redbox{
+    position:relative;
+    width:30px;
+    height:30px;
+    background:#c00;
+    float:left;
+    top:calc(50% - 15px);
+    margin-left:calc(50% - 45px);
+}
+.greenbox{
+    position:relative;
+    width:30px;
+    height:80px;
+    background:#0c0;
+    float:left;
+    top:calc(50% - 40px);
+}
+.bluebox{
+    position:relative;
+    width:30px;
+    height:40px;
+    background:#00f;
+    float:left;
+    top:calc(50% - 20px);
+}
+```
+
+- **设置行高**（line-align）: 只适用于单行的行内元素，CSS范例：外层div0，内容redbox，让redbox水平垂直置中。
+
+```css
+.div0{
+    width:200px;
+    height:150px;
+    border:1px solid #000;
+    line-height:150px;
+    text-align:center;
+}
+.redbox{
+    display:inline-block;
+    width:30px;
+    height:30px;
+    background:#c00;
+}
+```
+
+- 添加**伪元素**（::before、::after）：结合vertical-align:middle 垂直居中，
+
+```
+
+```
+
+参考：https://segmentfault.com/a/1190000020089104
+
+### 14.两栏布局的实现
+
+- #### flex弹性盒方案
+
+  > 左边固定固定宽度，右边设置flex:1，flex-grow(放大比例)、flex-shrink(缩小比例)、flex-basis(分配剩余空间之前，占据的主轴方向)
+
+  ```
+  
+  ```
+
+  
+
+
+
+- #### float+magin-left方案
+
+  > 父级元素设置overflow:hidden , 左边元素左浮动，右边设置margin-left:200px给左边留出空间
+
+  ```
+  
+  ```
+
+  
+
+- #### float + BFC方案
+  
+  > 左边元素左浮动，固定宽度；右边元素色值overflow:hidden; 此时会触发BFC,BC区域的内容不会与浮动元素发生重叠。
+  
+  ```
+  
+  ```
+  
+  
+  
+- ### 双float方案
+
+  >左边左浮动，右边右浮动；一般不推荐
+
+  ```
+  
+  ```
+
+  
+
+- 
