@@ -60,9 +60,9 @@ z-index:负值
 
 **<1>**.link 是XHTML标签，不仅能加载CSS，还能加载RSS；而import只能加载CSS.
 
-**<2>**.引入CSS，link页面载入时加载；import需要等待页面载入之后才加载。
+**<2>**.引入CSS，页面载入时同时加载；import需要等待页面载入之后才加载。
 
-**<3>**.link 可以通过JS操作DOM来改变样式，而import不行。
+**<3>**.link 可以通过JS控制DOM来改变样式，而import不行。
 
 
 
