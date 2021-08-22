@@ -83,3 +83,34 @@ boolean canFinish(int[] w, int D, int cap) {
 ```
 
 
+
+```javascript
+var minEatingSpeed = function(piles, H) {
+    // 最低值一根
+    let left = 1;
+    // 使用...迭代器遍找到最大值
+    let right = Math.max(...piles);
+    // 模拟能否在规定时间内吃完香蕉
+    const canEat = (piles, speed, H) => {
+        // 初始值为0
+        let sumTime = 0;
+        // 遍历piles中的数组，每堆香蕉的数量
+        for(let pile of piles){
+            // 向上取整
+            sumTime += Math.ceil(pile / speed);
+        }
+        return sumTime <= H;
+    };
+    // 判断条件，左子树小于右子树
+    while(left < right){
+        // 返回一个对数
+        let mid = Math.floor((right + left) / 2);
+        if(canEat(piles, mid, H)){
+            right = mid; // 如果能吃完，最大值调整为 mid
+        }else {
+            left = mid + 1; // 如果不能吃完，最小值调整为 mid=1
+        }
+    }
+    return right;
+}; 
+```
