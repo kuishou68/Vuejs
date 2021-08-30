@@ -32,8 +32,8 @@
 
 ### 3.script标签中defer 和 async 的区别
 
-- async 表示**后续文档**与**JS脚本**是异步执行的；而defer的**JS脚本**需要等待**文档加载完成之后**才能加载。
-- **加载顺序**不同，多个带有async属性的标签，不能保证加载的顺序；多个带有defer属性的标签能够按照顺序执行。
+- async 表示**后续文档**与**JS脚本**是异步执行的，多个带有async属性的标签，不能保证加载的顺序；
+- defer表示**JS脚本**需要等待**文档加载完成之后**才能加载，多个带有defer属性的标签能够按照顺序执行。
 
 ![image-20210813213730169](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210813213730169.png)
 
