@@ -13,7 +13,7 @@ module.exports = {
     lineNumbers: true
   },
   title: '魁首',
-  description: '机会只留给有准备的人！',
+  description: '一个没有天赋的前端程序员👨‍💻 ',
   themeConfig: {
     lastUpdated: '最后更新时间',
     logo: '/img/logo.png',
