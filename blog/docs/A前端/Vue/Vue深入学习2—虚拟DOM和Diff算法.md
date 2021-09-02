@@ -1,5 +1,3 @@
-
-
 > **1、snabbdom 是什么？**
 
 snabbdom是“速度"的意思，源码只有200行，使用TS写的，让东西变得模块化
@@ -41,7 +39,7 @@ h函数用于产生虚拟节点，同时也可以嵌套使用，得到虚拟DOM�
 
 ​	3.2、patch函数源码流程图
 
-![image-20210719192255676](https://github.com/kuishou68/assets/blob/main/image-20210719192255676.png)
+![image-20210719192255676](https://pic1.zhimg.com/v2-c7569d78e285f075d80f7f8899d2838c_b.png)
 
 ```javascript
 // 手写patch.js
@@ -139,15 +137,11 @@ const myVirtual3 = h('ul',{},[
 
 
 
-> **4.3、diff算法新旧节点对比的过程？**	
+> 4.3、diff算法新旧节点对比的过程？
 
-![image-20210721230652538](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210721230652538.png)
+![img](https://pic3.zhimg.com/v2-4a79bece9b4a8687a7370a47990b661e_b.png)
 
-> ①先借助key值找到``不需要移动``的相同节点。
->
-> ②再找到相同的节点，进行``移动``。
->
-> ③找不到的，才会``新建删除``节点，保底处理。
+> ①先借助key值找到不需要移动的相同节点。 ②再找到相同的节点，进行移动。 ③找不到的，才会新建删除节点，保底处理。
 
 
 

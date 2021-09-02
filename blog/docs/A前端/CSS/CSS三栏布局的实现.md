@@ -2,6 +2,8 @@
 
 > 页面中一共有三栏，左右两边宽度固定，中间自适应的布局。
 
+![image-20210902203011232](https://pic1.zhimg.com/80/v2-954f030fd5148a98086e8eae8955bc5b_720w.png)
+
 ### 1、`flex` 布局
 
 > 左右两栏固定宽度，中间一栏flex:1
@@ -15,7 +17,7 @@
     background:red;
 }
 .center{
-    flex:1;
+    flex:1; /*flex-grow（放大比例，默认位0） flex-shrink(缩小比例，默认位1) flex-basis(分类剩余空间之前，占据的主轴空间, 浏览器根据这个属性，计算主轴是否有多余空间，默认值auto)*/
     background:plum;
 }
 .right{
@@ -57,7 +59,7 @@
 
 ### 3、圣杯布局
 
-> 基本思路：在包裹在最外层div预留出左右两边padding的值，随后为三栏设置宽度和浮动，center宽度设置100%，占据整行；使用margin-left：-100%和相对定位，来使left盒子相对于上级元素移动到预留左边位置；right盒子则设置margin-right负值，使其紧随center移动到右边位置。
+> 基本思路：包裹在最外层div预留出左右两边padding的值，随后为三栏设置宽度和浮动，center宽度设置100%，占据整行；使用margin-left：-100%和相对定位，来使left盒子相对于上级元素移动到预留左边位置；right盒子则设置margin-right负值，使其紧随center移动到右边位置。
 
 ```html
 <body>
@@ -115,29 +117,30 @@ body{
 ```
 
 ```css
-.body{
-	min-width:550px;	
+body{
+     min-width: 550px;
 }
-.container{ /*包裹标签*/
-    width:100%;
+.container{
+     width: 100%;
 }
 .column{
-	float:left;
+     float:left;
 }
 .center{
-    margin: 0 200%;
-    background:red;
+     margin-left: 200px;/*预留左翅膀*/
+     margin-right: 150px;/*预留右翅膀*/
+     background: yellow;
 }
 .left{
-	width:200px;
-    margin-left: -100%;
-    background:red;
+     width: 200px;
+     margin-left: -100%;/*移动到左边预留位置*/
+     background: red;
 }
 .right{
-	width:200px;
-    margin-left:-200px;
-    background:blue;
-}
+     width: 150px;
+     margin-left: -150px;/*移动到右边预留位置*/
+     background: blue;
+} 
 ```
 
 参考 [圣杯布局和双飞翼布局的理解与思考](https://www.jianshu.com/p/81ef7e7094e8)

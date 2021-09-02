@@ -81,11 +81,11 @@ var self = this;
 
 > **3.生命周期**
 
-![](C:\Users\Administrator\Pictures\lifecyc.png)
+![](https://pic3.zhimg.com/v2-ac38998db9bf0e4bd851b0b8547b4036_b.png)
 
 
 
-![image-20210725222206025](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210725222206025.png)
+![image-20210725222206025](https://pic4.zhimg.com/v2-2b7d9cb2fa61d4d43ec9fa8e3d5f12df_b.png)
 
 - > **beforeCreate & created**
   >
@@ -314,7 +314,7 @@ app.mount('#app')
 
 
 
-
+s
 
 
 

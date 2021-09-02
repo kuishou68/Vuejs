@@ -2,7 +2,7 @@
 
 类似于后台管理系统，侧边栏固定，右边自适应网页布局！[查看演示效果](https://zhuqingguang.github.io/vac-works/cssLayout/index1.html)
 
-![image-20210804103915277](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210804103915277.png)
+![image-20210804103915277](https://pic4.zhimg.com/80/v2-c631a79179b1088f134ea89098a0087d_720w.png)
 
 ### 1、``flex`` 方案 （最佳方案）
 
@@ -48,7 +48,7 @@
 
 ### 3、``float + BFC`` 方案
 
-```
+```css
 .box{
     overflow: auto;
 }
@@ -90,20 +90,20 @@
 
 ```css
 .box{
-            display: grid;/*网格布局*/
-            grid-template-columns: 120px 1fr;/*列属性：*/
-            align-items: start; /*交叉轴start顶部对齐*/
-        }
-        .left{
-            box-sizing:border-box; /*元素设定的宽度和高度决定了元素的边框盒*/
-            grid-column: 1; 
-            background: red;
-        }
-        .right{
-            box-sizing:border-box;
-            grid-column:2;
-            background: blue;
-        }
+   display: grid;/*网格布局*/
+   grid-template-columns: 120px 1fr;/*列属性：*/
+   align-items: start; /*交叉轴start顶部对齐*/
+}
+.left{
+   box-sizing:border-box; /*元素设定的宽度和高度决定了元素的边框盒*/
+   grid-column: 1; 
+   background: red;
+}
+.right{
+   box-sizing:border-box;
+   grid-column:2;
+   background: blue;
+}
 ```
 
 

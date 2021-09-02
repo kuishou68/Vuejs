@@ -1,3 +1,5 @@
+![](https://pic2.zhimg.com/v2-994ad4cf8d58fa8eefb16317d269f96b_b.jpg)
+
 > **💻1、keep-alive是什么？**
 >
 > keep-alive是Vue内置的一个组件，可以使被包含的组件保留状态，避免被重新渲染！可以理解成防弹衣🧥;

@@ -1,10 +1,10 @@
 [mustache](https://github.com/janl/mustache.js/) 是 “胡子”的意思，因为它的嵌入标记 {{ }} 旋转过来很像[胡子](https://mustache.github.io/)，Vue中的 {{ }} 语法也引用了mustache，这也是我深入学习的目的。
 
-![giphy](C:\Users\Administrator\Desktop\giphy.gif)
+![img](https://pic3.zhimg.com/v2-e4a08f26d399229595e4a8f1718af1be_b.gif)
 
 > 1、原始js方式使 **数据** 变为**视图**
 
-```
+```javascript
  <ul id="list"></ul>
  <script>
         var arr = [
@@ -45,10 +45,12 @@
 
 > 2、mustache的**底层原理**
 
-要实现这样的：![image-20210718104621132](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210718104621132.png)
+要实现这样的：
 
-```
-<script>
+![img](https://pic1.zhimg.com/v2-bbbfd542b91c9487ea7573423a01c3d0_b.png)
+
+```javascript
+<script
         // 模板
         var templateStr =  '<h1>今天我买了一辆{{thing}},{{money}}W,很{{mood}}</h1>';
         // 数据
@@ -71,33 +73,31 @@
 </script>
 ```
 
-> **实现方式**：Mustache.render(templateStr, data); templateStr模板字符串，data数据，render返回填充后dom字符串。
+> **实现方式**：Mustache.render(templateStr, data); templateStr模板字符串，data数据，render返回填充后dom字符串。 **实现原理**：第①步：将**模板字符串**编译成**tokens** 形式，第②步：将**tokens**与**数据**结合，解析成**dom字符串**。
 
-> **实现原理**：第①步：将**模板字符串**编译成**tokens** 形式，第②步：将**tokens**与**数据**结合，解析成**dom字符串**。
-
-![image-20210717165612249](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210717165612249.png)
+![img](https://pic1.zhimg.com/v2-7a7c6f48e7e81003c8d8daffe0f7bd00_b.png)
 
 > 2、**什么是tokens?**
 
 JS的嵌套数组，模板字符串的JS表示形式。
 
-模板字符串：``<h1>我买了一辆{{thing}},{{money}}W</h1>``
+模板字符串：<h1>我买了一辆{{thing}},{{money}}W</h1>
 
 tokens: 
 
-```
+```javascript
 [
-	["text",  "< h1 >我买了一辆"],
-	["name",  ”thing“],
-	["text",  ","],
-	["name",  ”money“],
+    ["text",  "< h1 >我买了一辆"],
+    ["name",  ”thing“],
+    ["text",  ","],
+    ["name",  ”money“],
     ["text",  "W< /h1 >"],
 ]
 ```
 
-实现tokens思路：用到了《数据结构》中**栈**的原理，遇到   ``#``   号进栈，遇到  ``/``  线出栈；   ``#``   号标记的tokens，需要递归处理它的下标为2的小数组。遍历传入的 tokens 的每一个 token，遇到第一项是 # 和 / 的分别做处理，其余的做一个默认处理。大致思路是当遍历到的 token 的第一项为 # 时，就把直至遇到配套的 / 之前，遍历到的每一个 token 都放入一个容器（collector）中，把这个容器放入当前 token 里作为第 3 项元素。
+**实现tokens思路**：用到了《数据结构》中**栈**的原理，遇到   #   号进栈，遇到  /  线出栈；   #   号标记的tokens，需要递归处理它的下标为2的小数组。遍历传入的 tokens 的每一个 token，遇到第一项是 # 和 / 的分别做处理，其余的做一个默认处理。大致思路是当遍历到的 token 的第一项为 # 时，就把直至遇到配套的 / 之前，遍历到的每一个 token 都放入一个容器（collector）中，把这个容器放入当前 token 里作为第 3 项元素。
 
-```
+```javascript
 // nestTokens.js
 export default (tokens) => {
   const nestTokens = []
@@ -122,7 +122,5 @@ export default (tokens) => {
   return nestTokens
 }
 ```
-
-
 
 参考：https://juejin.cn/post/6954244558938963982

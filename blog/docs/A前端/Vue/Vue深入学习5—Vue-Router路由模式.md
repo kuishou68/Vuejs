@@ -1,4 +1,4 @@
-![image-20210723191207467](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210723191207467.png)
+![image-20210723191207467](https://pic1.zhimg.com/v2-2cc02eac5c202e963dc71ca31a88808c_b.png)
 
 
 
@@ -253,7 +253,7 @@ function match (
 >
 > 发生路径切换的时候，执行的一系列钩子函数。
 
-![image-20210723205053608](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210723205053608.png)
+![image-20210723205053608](https://pic4.zhimg.com/v2-ae397324e59cb1d5d2a3ee10236dfaa7_b.png)
 
 - **5.1、导航守卫的执行流程：**
 
@@ -272,7 +272,7 @@ router.beforeEach((to, from, next)=>{
 }) 
 ```
 
-![image-20210723204800587](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210723204800587.png)
+![image-20210723204800587](https://pic2.zhimg.com/v2-b5a018a0cfbe62aead637dab587a7245_b.png)
 
 参考：https://www.jianshu.com/p/60da87d4ec92
 

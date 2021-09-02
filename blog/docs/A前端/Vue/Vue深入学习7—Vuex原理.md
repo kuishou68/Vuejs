@@ -1,4 +1,4 @@
-![image-20210820155156721](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210820155156721.png)
+![image-20210820155156721](https://pic4.zhimg.com/v2-33fde920fb6951df90e377e30df4930d_b.jpg)
 
 ### **1、Vuex 是什么？**
 
