@@ -42,7 +42,7 @@ var self = this;
 
 > **2.v-model底层是怎么实现的？**
 >
-> ``v-model`` 会把关联的相应式数据(info.message)，动态的绑定到表单元素的value属性上，让后监听 ``input`` 事件；
+> ``v-model`` 会把关联的相应式数据(info.message)，动态的绑定到表单元素的value属性上，然后监听 ``input`` 事件；
 >
 > 当 ``v-model`` 绑定的相应数据发生变化时，表单元素的value值也会随之变化。
 
