@@ -125,6 +125,20 @@ http2. 0 服务端不再是被动响应，可以**主动向客户端发送消息
 
 ![](https://pica.zhimg.com/80/v2-476ffbb008e4ca296146f218fab6d790_720w.png)
 
+🌰在FIN_WAIT_2 状态下，是如何处理收到的乱序FIN报文？
+
+​		在FIN_WAIT_2状态时，如果收到乱序的FIN报文，那么就会加入到**乱序队列**。等到再次收到前面**被网络延迟**的数据包时，会判断**乱序队列**的数据是否可用，如果乱序队列中找到与当前报文序列号顺序一致的报文，就继续判断是否有FIN标志，有FIN标志才会进入TIME_WAIT状态。![图片](https://mmbiz.qpic.cn/mmbiz_png/J0g14CUwaZdNcCeJTjxbSuLh7mOxubkXJj6lwUu5feibUr6dEDQp4lsUgKm2ibR2BQcLmr9kGGRzlLo3V2CzaNFQ/640?wx_fmt=png&tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
+
+🌰TCP连接又是什么时候进入到TIME_WAIT状态的？
+
+当客户端收到**被网络延迟**的数据包后，就会调用tcp_ofo_queue函数，这个函数中，乱序队列找到能与当前报文序列号保持顺序的报文后，会看改报文是否有FIN标志，如果有，才会调用tcp_fin()函数。tcp_fin函数将FIN_WAIT_WAIT2状态编程TIME_WAIT状态，并启动TIME_WAIT定时器。
+
+🌰在 FIN_WAIT_2 状态下，收到 FIN 报文是如何处理的？
+
+处于FIN_WAIT_2状态下的客户端，在收到服务端的报文后，最终会调用tcp_v4_do_rcv函数，当收到的报文是乱序的话，则调用tcp_data_queue_ofo函数，将报文加入到乱序队列，这个队列的数据结构是红黑树；
+
+Linux源码连接：*https://elixir.bootlin.com/linux/latest/source*
+
 ### 6.对Keep-alive的理解
 
 http1.0 默认开启的长链接（`keep-alive` ），使用**持久连接**来使**多个http请求**复用同一个TCP连接，数据传输完成保持TCP连接不断开。
