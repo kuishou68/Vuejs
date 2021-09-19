@@ -1,1 +1,0 @@
-1. 首先每个plugin是一个class或者函数，提供原型上的apply方法，
